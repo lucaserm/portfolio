@@ -25,9 +25,12 @@ export const NAMES = {
 	'landing-page-noframewok': 'Landing Page sem Framework',
 	'exemplo-posts-react': 'Posts com React',
 	sinmos: 'Protótipo do Sistema Integrado de Monitoramento e Segurança',
+	string: '',
 };
 
 export const Article: React.FC<Props> = ({ project, views }) => {
+	const nome: string = project.name;
+
 	return (
 		<a href={`${project.html_url}`}>
 			<article className='p-4 md:p-8'>
@@ -49,7 +52,7 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 					</span>
 				</div>
 				<h2 className='z-20 text-xl font-medium duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-display'>
-					{NAMES[`${project.name}`]}
+					{(NAMES as any)[nome]}
 				</h2>
 				<p className='z-20 mt-4 text-sm  duration-1000 text-zinc-400 group-hover:text-zinc-200'>
 					{project.description}
