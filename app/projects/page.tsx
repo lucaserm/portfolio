@@ -10,7 +10,9 @@ export default async function ProjectsPage() {
 	const res = await axios.get(
 		'https://api.github.com/search/repositories?q=user%3Alucaserm'
 	);
-	let items: any[] = res.data.items;
+	let items: any[] = res.data.items.filter(
+		(repo: any) => repo.name !== 'portfolio'
+	);
 
 	const principal = items
 		? items.find((repo) => repo.name === 'sinmos-remastered-api')
