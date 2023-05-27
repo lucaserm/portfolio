@@ -46,6 +46,16 @@ export default function Home() {
 					<br />
 					me encontro atualmente fazendo faculdade à noite, porém, no meu tempo
 					livre eu amo programar.
+					<br />
+					<br />
+					<a
+						target='_blank'
+						href='Currículo Lucas Macedo.pdf'
+						download={true}
+						className='underline duration-500 hover:text-zinc-300'
+					>
+						Baixe aqui meu currículo
+					</a>
 				</h2>
 			</div>
 		</div>
