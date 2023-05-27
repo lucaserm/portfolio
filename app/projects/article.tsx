@@ -25,7 +25,6 @@ export const NAMES = {
 	'landing-page-noframewok': 'Landing Page sem Framework',
 	'exemplo-posts-react': 'Posts com React',
 	sinmos: 'Protótipo do Sistema Integrado de Monitoramento e Segurança',
-	string: '',
 };
 
 export const Article: React.FC<Props> = ({ project, views }) => {
