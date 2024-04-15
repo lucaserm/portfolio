@@ -7,15 +7,15 @@ import { Card } from '../components/card';
 const socials = [
 	{
 		icon: <Twitter size={18} />,
-		href: 'https://twitter.com/meninodeinfo',
-		label: 'Twitter',
-		handle: '@meninodeinfo',
+		href: 'https://linkedin.com/in/lucaserm',
+		label: 'Linkedin',
+		handle: Lucas Macedo',
 	},
 	{
 		icon: <Instagram size={18} />,
-		href: 'https://instagram.com/meninodeinfo',
+		href: 'https://instagram.com/omeninotech',
 		label: 'Instagram',
-		handle: '@meninodeinfo',
+		handle: '@omeninotech',
 	},
 	{
 		icon: <Mail size={18} />,
