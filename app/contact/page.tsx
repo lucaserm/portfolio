@@ -1,12 +1,12 @@
 'use client';
-import { Github, Instagram, Mail, Twitter } from 'lucide-react';
+import { Github, Instagram, Mail, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { Navigation } from '../components/nav';
 import { Card } from '../components/card';
 
 const socials = [
 	{
-		icon: <Twitter size={18} />,
+		icon: <Linkedin size={18} />,
 		href: 'https://linkedin.com/in/lucaserm',
 		label: 'Linkedin',
 		handle: Lucas Macedo',
