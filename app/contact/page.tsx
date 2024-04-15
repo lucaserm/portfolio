@@ -9,7 +9,7 @@ const socials = [
 		icon: <Linkedin size={18} />,
 		href: 'https://linkedin.com/in/lucaserm',
 		label: 'Linkedin',
-		handle: Lucas Macedo',
+		handle: 'Lucas Macedo',
 	},
 	{
 		icon: <Instagram size={18} />,
