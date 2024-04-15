@@ -24,6 +24,7 @@ export const NAMES = {
 	'landing-page-noframewok': 'Landing Page sem Framework',
 	'exemplo-posts-react': 'Posts com React',
 	sinmos: 'Protótipo do Sistema Integrado de Monitoramento e Segurança',
+	'skyblog': 'SkyBlog: ChatGPT Post Generator',
 };
 
 export const Article: React.FC<Props> = ({ project, views }) => {
@@ -39,7 +40,7 @@ export const Article: React.FC<Props> = ({ project, views }) => {
 								)}
 							</time>
 						) : (
-							<span>SOON</span>
+							<span>Em breve</span>
 						)}
 					</span>
 					<span className='text-zinc-500 text-xs  flex items-center gap-1'>
