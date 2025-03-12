@@ -25,6 +25,11 @@ export const projects = [
     handle: 'Blog de Notícias Pessoal',
     label: 'doutrinas-sociais-economicas',
   },
+  {
+    href: `https://pomodoro.${domain}/blog`,
+    handle: 'Site para Pomodoro',
+    label: 'doutrinas-sociais-economicas',
+  },
 ];
 // href: 'https://linkedin.com/in/lucaserm',
 //     label: 'LinkedIn',
