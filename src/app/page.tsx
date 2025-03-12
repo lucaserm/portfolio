@@ -47,7 +47,7 @@ export default function Home() {
           Caso queira saber mais sobre minha trajetória, Baixe aqui meu{' '}
           <a
             target="_blank"
-            href="Currículo Lucas Macedo.pdf"
+            href="english-curriculum.pdf"
             download={true}
             className="underline duration-500 hover:text-zinc-300"
           >
