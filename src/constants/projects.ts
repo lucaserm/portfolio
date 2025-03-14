@@ -3,34 +3,36 @@ export const projects = [
   {
     href: `https://example-landing.${domain}`,
     handle: 'Doutrinas Sociais Economicas',
-    label: 'doutrinas-sociais-economicas',
+    label: 'Landing Page', // Changed label
   },
   {
     href: `https://landing-page.${domain}`,
     handle: 'Landing Page',
-    label: 'doutrinas-sociais-economicas',
+    label: 'Landing Page', // Changed label
   },
   {
     href: `https://calc.${domain}`,
     handle: 'Calculadora',
-    label: 'doutrinas-sociais-economicas',
+    label: 'Calculator', // Changed label
   },
   {
     href: `https://comedyblog.${domain}/blog`,
     handle: 'Blog de Notícias do CH',
-    label: 'doutrinas-sociais-economicas',
+    label: 'Comedy News Blog', // Changed label
   },
   {
     href: `https://blog.${domain}/blog`,
     handle: 'Blog de Notícias Pessoal',
-    label: 'doutrinas-sociais-economicas',
+    label: 'Personal News Blog', // Changed label
   },
   {
     href: `https://pomodoro.${domain}/blog`,
     handle: 'Site para Pomodoro',
-    label: 'doutrinas-sociais-economicas',
+    label: 'Pomodoro Timer', // Changed label
+  },
+  {
+    href: `https://finance.${domain}/blog`,
+    handle: 'Site para Gerenciamento Financeiro',
+    label: 'Financial Management Site', // Changed label
   },
 ];
-// href: 'https://linkedin.com/in/lucaserm',
-//     label: 'LinkedIn',
-//     handle: 'Lucas Macedo',
