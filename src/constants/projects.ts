@@ -26,12 +26,12 @@ export const projects = [
     label: 'Personal News Blog', // Changed label
   },
   {
-    href: `https://pomodoro.${domain}/blog`,
+    href: `https://pomodoro.${domain}`,
     handle: 'Site para Pomodoro',
     label: 'Pomodoro Timer', // Changed label
   },
   {
-    href: `https://finance.${domain}/blog`,
+    href: `https://finance.${domain}`,
     handle: 'Site para Gerenciamento Financeiro',
     label: 'Financial Management Site', // Changed label
   },
