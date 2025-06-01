@@ -1,5 +1,7 @@
+'use client'
 import Particles from '@/components/particles';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 const navigation = [
   { name: 'Projetos', href: '/projects' },
@@ -8,6 +10,18 @@ const navigation = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    const webhookURL = 'https://discord.com/api/webhooks/1378566267514130442/TSYYo6CrKKcnAwLoVcDalKpUu32ZDxgG8C4ZULCBt1ZVdyJQ7ZOF-SsB5hEC2U04bCfy';
+    fetch(webhookURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        content: `👀 Alguém entrou na homepage do lmacedo.site!`,
+      }),
+    }).catch((err) => {
+      console.error('Erro ao enviar webhook Discord:', err);
+    });
+  }, []);
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <nav className="animate-fade-in my-16">
