@@ -11,17 +11,40 @@ const navigation = [
 
 export default function Home() {
   useEffect(() => {
-    const webhookURL = 'https://discord.com/api/webhooks/1378566267514130442/TSYYo6CrKKcnAwLoVcDalKpUu32ZDxgG8C4ZULCBt1ZVdyJQ7ZOF-SsB5hEC2U04bCfy';
-    fetch(webhookURL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        content: `👀 Alguém entrou na homepage do lmacedo.site!`,
-      }),
-    }).catch((err) => {
-      console.error('Erro ao enviar webhook Discord:', err);
-    });
+    async function sendWebhook() {
+      try {
+        const webhookURL = 'https://discord.com/api/webhooks/1378566267514130442/TSYYo6CrKKcnAwLoVcDalKpUu32ZDxgG8C4ZULCBt1ZVdyJQ7ZOF-SsB5hEC2U04bCfy';
+
+        const userAgent = navigator.userAgent;
+        const time = new Date().toLocaleString();
+        const page = window.location.href;
+
+        await fetch(webhookURL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            content: `👀 Alguém entrou na homepage do lmacedo.site!`,
+            embeds: [
+              {
+                title: "Detalhes do visitante",
+                fields: [
+                  { name: "User Agent", value: userAgent, inline: false },
+                  { name: "Horário", value: time, inline: true },
+                  { name: "Página", value: page, inline: true },
+                ],
+                color: 7506394,
+              },
+            ],
+          }),
+        });
+      } catch (error) {
+        console.error('Erro ao enviar webhook Discord:', error);
+      }
+    }
+
+    sendWebhook();
   }, []);
+
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <nav className="animate-fade-in my-16">
