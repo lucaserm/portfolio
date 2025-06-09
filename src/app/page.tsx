@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Particles from '@/components/particles';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -9,11 +9,12 @@ const navigation = [
   { name: 'Contato', href: '/contact' },
 ];
 
-const WEBHOOK_URL = 'https://discord.com/api/webhooks/1378566267514130442/TSYYo6CrKKcnAwLoVcDalKpUu32ZDxgG8C4ZULCBt1ZVdyJQ7ZOF-SsB5hEC2U04bCfy';
-
 export default function Home() {
-  const [geolocation, setGeolocation] = useState<{ latitude: number; longitude: number; } | null>(null);
+  const [geolocation, setGeolocation] = useState<{ latitude: number; longitude: number } | null>(
+    null
+  );
   const [geolocationError, setGeolocationError] = useState<string | null>(null);
+  const [hasReportedGeolocation, setHasReportedGeolocation] = useState<boolean>(false);
 
   useEffect(() => {
     function getGeolocation() {
@@ -44,63 +45,42 @@ export default function Home() {
           { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
         );
       } else {
-        // ? Caso o navegador não suporte geolocalização.
         setGeolocationError('Geolocation is not supported by this browser.');
       }
     }
 
-    // ? Chama a função para obter a geolocalização.
     getGeolocation();
   }, []);
 
   useEffect(() => {
-    async function sendWebhook() {
-      try {
-        const userAgent = navigator.userAgent;
-        const time = new Date().toLocaleString();
-        const page = window.location.href;
+    console.log(geolocation, geolocationError, hasReportedGeolocation);
+    if ((geolocation !== null || geolocationError !== null) && !hasReportedGeolocation) {
+      async function sendAnalytics() {
+        try {
+          const userAgent = navigator.userAgent;
+          const time = new Date().toLocaleString();
+          const page = window.location.href;
 
-        const fields = [
-          { name: "User Agent", value: userAgent, inline: false },
-          { name: "Horário", value: time, inline: true },
-          { name: "Página", value: page, inline: true },
-        ];
-
-        if (geolocation) {
-          fields.push(
-            { name: "Latitude", value: geolocation.latitude.toString(), inline: true },
-            { name: "Longitude", value: geolocation.longitude.toString(), inline: true }
-          );
-        } else if (geolocationError) {
-          fields.push({ name: "Geolocation Error", value: geolocationError, inline: false });
-        } else {
-          fields.push({ name: "Geolocation Status", value: "Fetching or not available", inline: false });
+          await fetch('api/analytics', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              userAgent,
+              time,
+              page,
+              geolocation,
+              geolocationError,
+            }),
+          });
+          setHasReportedGeolocation(true);
+        } catch (error) {
+          console.error('Error sending analytics to API route:', error);
         }
-
-        await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            content: `👀 Alguém entrou na homepage do lmacedo.site!`,
-            embeds: [
-              {
-                title: "Detalhes do visitante",
-                fields: fields,
-                color: 7506394,
-              },
-            ],
-          }),
-        });
-      } catch (error) {
-        console.error('Erro ao enviar webhook Discord:', error);
       }
-    }
 
-    if (geolocation !== null || geolocationError !== null) {
-      sendWebhook();
+      sendAnalytics();
     }
-
-  }, [geolocation, geolocationError]);
+  }, [geolocation, geolocationError, hasReportedGeolocation]);
 
   return (
     <div className="flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
