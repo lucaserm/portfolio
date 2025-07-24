@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Globe } from "lucide-react"
 import Image from "next/image"
-
 type WebsiteType = {
   id: number;
   name: string;
@@ -11,36 +10,37 @@ type WebsiteType = {
   url: URL;
   image: URL | string;
   technologies: string[];
-  status: 'Live' | 'Offline', 
-}
+  status: 'Live' | 'Offline';
+};
 
 const domain = 'lmacedo.site';
+
 const websites: WebsiteType[] = [
   {
     id: 0,
     name: "ComedyHub",
     description:
-      "A full-featured e-commerce platform built with Next.js and Stripe integration. Features include product catalog, shopping cart, and secure checkout.",
-    url: new URL(`https://thecomedyhub.com.br`),
+      "A social media platform focused on humor and entertainment, featuring user-generated content, moderation tools, and interactive engagement.",
+    url: new URL("https://thecomedyhub.com.br"),
     image: "/chub.png",
     technologies: ["Java", "Spring", "PostgreSQL", "Docker"],
     status: "Live",
   },
   {
     id: 1,
-    name: "Landing Page",
+    name: "Portfolio Landing Page",
     description:
-      "A full-featured e-commerce platform built with Next.js and Stripe integration. Features include product catalog, shopping cart, and secure checkout.",
+      "A personal portfolio landing page showcasing projects, skills, and contact information in a clean and responsive layout.",
     url: new URL(`https://landing-page.${domain}`),
     image: "/landing-page.png",
-    technologies: ["HTML", "CSS", "Github", "Netlify"],
+    technologies: ["HTML", "CSS", "GitHub", "Netlify"],
     status: "Live",
   },
   {
     id: 2,
-    name: "Blog de Notícias do CH",
+    name: "ComedyHub News Blog",
     description:
-      "A comprehensive dashboard for managing portfolio investments with real-time data visualization and analytics.",
+      "A blog for posting updates and announcements related to the ComedyHub platform. Last updated in February.",
     url: new URL(`https://comedyblog.${domain}/blog`),
     image: "/chub-blog.png",
     technologies: ["React", "TypeScript", "Docusaurus"],
@@ -48,9 +48,9 @@ const websites: WebsiteType[] = [
   },
   {
     id: 3,
-    name: "Blog de Notícias Pessoal",
+    name: "Personal Tech Blog",
     description:
-      "A comprehensive dashboard for managing portfolio investments with real-time data visualization and analytics.",
+      "A personal blog for sharing articles, notes, and ideas. Last updated in February.",
     url: new URL(`https://blog.${domain}/blog`),
     image: "/personal-blog.png",
     technologies: ["React", "TypeScript", "Docusaurus"],
@@ -58,19 +58,19 @@ const websites: WebsiteType[] = [
   },
   {
     id: 4,
-    name: "Site para Gerenciamento Financeiro",
+    name: "Market Data Dashboard",
     description:
-      "A comprehensive dashboard for managing portfolio investments with real-time data visualization and analytics.",
+      "A financial dashboard for viewing real-time price data of assets listed on Brazilian and U.S. stock markets.",
     url: new URL(`https://finance.${domain}`),
     image: "/finance.png",
-    technologies: ["React", "D3.js", "Node.js", "PostgreSQL"],
+    technologies: ["React", "Next.js"],
     status: "Live",
   },
   {
     id: 5,
-    name: "Site para Pomodoro",
+    name: "Pomodoro Timer",
     description:
-      "A comprehensive dashboard for managing portfolio investments with real-time data visualization and analytics.",
+      "A simple and clean Pomodoro timer app to boost productivity with customizable work and break intervals.",
     url: new URL(`https://pomodoro.${domain}`),
     image: "/pomodoro.png",
     technologies: ["React", "TypeScript"],
@@ -78,23 +78,25 @@ const websites: WebsiteType[] = [
   },
   {
     id: 6,
-    name: "Doutrinas Sociais Econômicas",
-    description: "A modern blog platform with markdown support, SEO optimization, and content management system.",
+    name: "Economic Doctrines Project",
+    description:
+      "An educational website created for a high school history presentation, covering key economic doctrines.",
     url: new URL(`https://example-landing.${domain}`),
     image: "/landing-page-econ.png",
-    technologies: ["HTML", "CSS", "Github", "Netlify"],
+    technologies: ["HTML", "CSS", "GitHub", "Netlify"],
     status: "Live",
   },
   {
     id: 7,
-    name: "Calculadora",
-    description: "A modern blog platform with markdown support, SEO optimization, and content management system.",
+    name: "Basic Calculator",
+    description:
+      "A simple web calculator built with JavaScript for performing basic arithmetic operations.",
     url: new URL(`https://calc.${domain}`),
     image: "/calc.png",
-    technologies: ["HTML", "CSS", "JavaScript", "Github", "Netlify"],
+    technologies: ["HTML", "CSS", "JavaScript", "GitHub", "Netlify"],
     status: "Live",
   },
-]
+];
 
 export default function LiveWebsites() {
   return (
