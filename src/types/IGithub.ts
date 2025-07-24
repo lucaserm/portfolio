@@ -32,6 +32,10 @@ interface GitHubRepository {
   visibility: string;
   watchers: number;
   default_branch: string;
+  language: string | null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
 }
 
 export interface GitHubSearchResponse {

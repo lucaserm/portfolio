@@ -18,4 +18,5 @@ export const NAMES: Record<string, string> = {
   'my-finance': 'Projeto para Organização Pessoal das Finanças',
   'my-docs-comedyhub': 'Documentação Pessoal - ComedyHub',
   'next-tutorial': 'Tutorial para Desenvolvimento em NextJS',
+  'java-kiekidelivery': 'Sistema de Delivery com Micro Serviços (Java)'
 };

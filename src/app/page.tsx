@@ -1,13 +1,13 @@
 'use client';
+import Footer from '@/components/footer';
+import GitHubRepos from '@/components/github-repos';
+import Header from '@/components/header';
+import LiveWebsites from '@/components/live-website';
+import LoadingSpinner from '@/components/loading-spinner';
+import Navigation from '@/components/navigation';
+import OtherProjects from '@/components/other-projects';
 import Particles from '@/components/particles';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
-const navigation = [
-  { name: 'Projetos', href: '/projects' },
-  { name: 'Projetos Online', href: '/online' },
-  { name: 'Contato', href: '/contact' },
-];
 
 export default function Home() {
   const [geolocation, setGeolocation] = useState<{ latitude: number; longitude: number } | null>(
@@ -83,52 +83,41 @@ export default function Home() {
   }, [geolocation, geolocationError, hasReportedGeolocation]);
 
   return (
-    <div className="flex h-screen w-screen flex-col items-center justify-center overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-      <nav className="animate-fade-in my-16">
-        <ul className="flex items-center justify-center gap-4">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm text-zinc-500 duration-500 hover:text-zinc-300"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </ul>
-      </nav>
+    <div id="" className="min-h-screen h-full items-center justify-center bg-gradient-to-tl from-black via-zinc-600/20 to-black">      
       <div className="animate-glow animate-fade-left hidden h-px w-screen bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 md:block" />
-      <Particles className="animate-fade-in absolute inset-0 -z-10" quantity={1000} />
-      <h1 className="text-edge-outline animate-title font-display z-10 cursor-default bg-white bg-clip-text text-4xl whitespace-nowrap text-transparent duration-1000 sm:text-6xl md:text-9xl">
-        Lucas Macedo
-      </h1>
+      <Particles className="animate-fade-in absolute inset-0 -z-10 h-full" quantity={1000} />
+      <Navigation/>
+      <main className="relative">
+        <Header />
 
-      <div className="animate-glow animate-fade-right hidden h-px w-screen bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 md:block" />
-      <div className="animate-fade-in my-16 text-center">
-        <h2 className="text-sm text-zinc-500">
-          Olá, meu nome é Lucas! Sou desenvolvedor e entusiasta de tecnologia, sempre explorando
-          novas ideias e criando projetos.
-          <br /> No meu tempo livre, gosto de programar e experimentar diferentes tecnologias. Você
-          pode conferir meus projetos no{' '}
-          <Link
-            target="_blank"
-            href="https://github.com/lucaserm?tab=repositories"
-            className="underline duration-500 hover:text-zinc-300"
-          >
-            Github
-          </Link>
-          <br />
-          Caso queira saber mais sobre minha trajetória, Baixe aqui meu{' '}
-          <a
-            target="_blank"
-            href="english-curriculum.pdf"
-            download={true}
-            className="underline duration-500 hover:text-zinc-300"
-          >
-            Currículo
-          </a>
-        </h2>
-      </div>
+        
+        <section id="websites" className="py-20 scroll-mt-20">
+            <div className="container mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text whitespace-nowrap text-transparent bg-white">Live Websites</h2>
+              <LiveWebsites />
+            </div>
+        </section>
+
+        <section id="repositories" className="py-20 scroll-mt-20 mx-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text whitespace-nowrap text-transparent bg-white">
+              GitHub Repositories
+            </h2>
+            <GitHubRepos />
+          </div>
+        </section>
+
+        
+          <section id="projects" className="py-20 scroll-mt-20">
+            <div className="container mx-auto px-4">
+              <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text whitespace-nowrap text-transparent bg-white">Other Projects</h2>
+              <OtherProjects />
+            </div>
+          </section>
+        <div className="animate-glow animate-fade-right hidden h-px w-screen bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 md:block" />
+        
+        <Footer/>
+      </main>
     </div>
   );
 }
