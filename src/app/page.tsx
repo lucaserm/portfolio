@@ -3,7 +3,6 @@ import Footer from '@/components/footer';
 import GitHubRepos from '@/components/github-repos';
 import Header from '@/components/header';
 import LiveWebsites from '@/components/live-website';
-import LoadingSpinner from '@/components/loading-spinner';
 import Navigation from '@/components/navigation';
 import OtherProjects from '@/components/other-projects';
 import Particles from '@/components/particles';

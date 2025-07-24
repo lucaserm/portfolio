@@ -6,9 +6,10 @@ import { Button } from '@/components/ui/button'
 import { ExternalLink, Star, GitFork } from 'lucide-react'
 import { NAMES } from '@/constants/names'
 import { useEffect, useState } from 'react'
+import { ProcessedRepo } from '@/lib/github';
 
 export default function GitHubRepos() {
-  const [repos, setRepos] = useState<any[]>([])
+  const [repos, setRepos] = useState<ProcessedRepo[]>([])
 
   useEffect(() => {
     async function fetchRepos() {
