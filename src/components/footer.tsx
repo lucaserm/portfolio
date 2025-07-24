@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
+            <h3 className="text-2xl font-bold mb-4">Let&apos;s Connect</h3>
             <p className="text-slate-300 mb-6">
-              I'm always interested in new opportunities and collaborations. Feel free to reach out if you'd like to
+              I&apos;m always interested in new opportunities and collaborations. Feel free to reach out if you&apos;d like to
               work together!
             </p>
             <div className="flex gap-4">
