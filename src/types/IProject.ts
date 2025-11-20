@@ -1,5 +1,5 @@
 export interface Socials {
-  href: string;
-  label: string;
-  handle: string;
+	href: string;
+	label: string;
+	handle: string;
 }
