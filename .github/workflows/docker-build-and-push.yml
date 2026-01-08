@@ -25,6 +25,5 @@ jobs:
         with:
           context: .
           file: ./dockerfile
-          target: production
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/apps:kiaz-portfolio-${{ github.ref_name }}-latest
