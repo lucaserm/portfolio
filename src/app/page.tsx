@@ -1,8 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-import GitHubRepos from '@/components/github-repos';
-import LiveWebsites from '@/components/live-website';
-import OtherProjects from '@/components/other-projects';
 import Image from 'next/image';
 import { Briefcase, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
