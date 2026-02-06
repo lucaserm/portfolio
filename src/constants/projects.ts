@@ -1,4 +1,4 @@
-const domain = "lmacedo.site";
+export const domain = "omeninotech.com";
 export const projects = [
 	{
 		href: `https://example-landing.${domain}`,
